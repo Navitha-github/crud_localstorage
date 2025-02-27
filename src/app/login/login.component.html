@@ -1,0 +1,32 @@
+<form [formGroup]="loginForm" (submit)="login()">
+<div class="row">
+    <div class="card-header bg-primary">
+        Login Form
+      </div>
+<div class="col-12">
+    <label for="">Email</label>
+    <input type="text" formControlName="email" class="form-control">
+    <div class="text-danger">
+      @if(loginForm.controls['email'].touched) {
+        @if(loginForm.controls['email'].errors?.['required']) {
+          <span>Email is required</span>
+        }
+      }
+    </div>
+  </div>
+  <div class="col-12">
+    <label for="">Password</label>
+    <input type="text" formControlName="password" class="form-control">
+    <div class="text-danger">
+      @if(loginForm.controls['password'].touched) {
+        @if(loginForm.controls['password'].errors?.['required']) {
+          <span>Password is required</span>
+        }
+      }
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="button" class="btn btn-primary text-center" [disabled]="loginForm.invalid">Login</button>
+  </div>
+</div>
+</form>

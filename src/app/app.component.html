@@ -53,6 +53,9 @@
                   @if(employeeForm.controls['name'].errors?.['required']) {
                     <span>Name is required</span>
                   }
+                  @if(employeeForm.controls['name'].errors?.['minlength']) {
+                    <span>Minimum 3 characters required</span>
+                  }
                 }
               </div>
             </div>
@@ -106,4 +109,6 @@
         </form>
       </div>
     </div>
+  </div>
+</div>
  
